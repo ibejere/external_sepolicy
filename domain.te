@@ -356,7 +356,8 @@ neverallow {
   -zygote
   -installd
   -dex2oat
- -system_server
+  -system_server
+  -recovery
 } dalvikcache_data_file:file no_w_file_perms;
 
 neverallow {
@@ -365,6 +366,7 @@ neverallow {
   -installd
   -dex2oat
   -zygote
+  -recovery
 } dalvikcache_data_file:dir no_w_dir_perms;
 
 # Only system_server should be able to send commands via the zygote socket
@@ -440,6 +442,7 @@ neverallow {
   -system_app
   -init
   -installd # for relabelfrom and unlink, check for this in explicit neverallow
+  -recovery 
 } system_data_file:file no_w_file_perms;
 # do not grant anything greater than r_file_perms and relabelfrom unlink
 # to installd
